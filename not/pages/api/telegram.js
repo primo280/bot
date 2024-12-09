@@ -13,11 +13,24 @@ export default async function handler(req, res) {
                 const chatId = message.chat.id;
                 const text = message.text;
 
-                // Exemple : Répondre à /start
+                // Gérer les commandes
                 if (text === '/start') {
-                    await bot.sendMessage(chatId, 'Bienvenue sur mon bot Telegram !');
+                    await bot.sendMessage(
+                        chatId,
+                        `👋 Bienvenue sur Deltraxbot  !\n\nVoici les commandes disponibles :\n` +
+                        `/apropos - En savoir plus sur le bot\n` +
+                        `/services - Voir les services proposés\n` +
+                        `/infos - Obtenir des informations utiles\n`
+                    );
+                } else if (text === '/apropos') {
+                    await bot.sendMessage(chatId, `🤖 Ce bot est conçu pour vous fournir des services personnalisés et des informations. Créé avec ❤️ et Node.js.`);
+                } else if (text === '/services') {
+                    await bot.sendMessage(chatId, `🛠️ Voici les services disponibles :\n- Assistance technique\n- Consultation personnalisée\n- Informations générales`);
+                } else if (text === '/infos') {
+                    await bot.sendMessage(chatId, `ℹ️ Informations utiles :\n- Contact : support@example.com\n- Site web : https://example.com\n- Horaires : 9h à 18h`);
                 } else {
-                    await bot.sendMessage(chatId, `Vous avez envoyé : ${text}`);
+                    // Réponse par défaut si la commande n'est pas reconnue
+                    await bot.sendMessage(chatId, `⚠️ Commande non reconnue. Tapez /start pour voir la liste des commandes.`);
                 }
             }
 
