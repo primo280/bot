@@ -4,6 +4,6 @@ const TOKEN = process.env.TELEGRAM_BOT_TOKEN;
 
 
 const bot = new TelegramBot(TOKEN);
-bot.setWebHook('https://deltrax.vercel.app/api/telegram');
+bot.setWebHook('https://bot-d383.vercel.app/api/telegram');
 
 console.log('Webhook configuré !');
