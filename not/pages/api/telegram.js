@@ -1,5 +1,5 @@
 import TelegramBot from "node-telegram-bot-api";
-import { sendNotification, sendAlert } from "../utils/notifications";
+import { sendNotification, sendAlert } from "../../utils/notifications";
 
 const TOKEN = "7699819387:AAGPwD3nrs_EZ1vtKlQI2bDtP9tmEwSEvqk";
 const bot = new TelegramBot(TOKEN, { polling: false });
